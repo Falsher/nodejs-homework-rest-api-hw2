@@ -10,6 +10,8 @@ const { users: ctrl } = require("../../controllers");
 
 const router = express.Router();
 
+router.get("/verify/:verificationToken", controllerWrapper(ctrl.verify));
+router.post("/verify", controllerWrapper(ctrl.recheck));
 router.patch(
   "/avatars",
   authenticate,
